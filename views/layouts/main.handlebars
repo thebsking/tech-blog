@@ -7,7 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <nav>
+        <ul id="nav-elemnts">
+            <li>Home</li>
+            <li>Dashboard</li>
+            {{#if logged_in}}
+            <li>Logout</li>
+            {{/else}}
+            <li>Login</li>
+            {{/if}}
+        </ul>
+    </nav>
     <main>
         {{{body}}}
     </main>
