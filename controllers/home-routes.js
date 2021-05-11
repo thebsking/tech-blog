@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const {Post, Comment, User} = require('../models');
+const { model } = require('../config/connection');
+const { Post, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
             ]
         });
 
-        const posts = allPosts.map((post) => post.get({plain: true}));
+        const posts = allPosts.map((post) => post.get({ plain: true }));
 
         res.render('homepage', {
             posts,
@@ -25,4 +26,54 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
+//WHEN I click on the dashboard option in the navigation
+//THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
+
+router.get('/dashboard', withAuth, async (req, res)=> {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Post }],
+        });
+
+        const user = userData.get({ plain: true });
+
+        res.render('dashboard', {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//WHEN I click on an existing blog post 
+//THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
+
+router.get('/post/:id', async (req, res) => {
+    try {
+        const getPost = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Comment,
+                }
+            ]
+        });
+        const post = getPost.get({ plain: true });
+
+        res.render('post', {
+            ...post,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//WHEN I enter a comment and click on the submit button while signed in
+//THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
