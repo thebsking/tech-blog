@@ -1,4 +1,3 @@
-const { join } = require('bluebird');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
