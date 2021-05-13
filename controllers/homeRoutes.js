@@ -5,6 +5,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
+        if(req.session.logged_in){
         const allPosts = await Post.findAll({
             include: [
                 {
@@ -22,7 +23,10 @@ router.get('/', async (req, res) => {
         res.render('homepage', {
             posts,
             logged_in: req.session.logged_in
-        });
+        });}
+        else {
+            res.render('login')
+        }
     } catch (err) {
         res.status(500).json(err);
     }
