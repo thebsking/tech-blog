@@ -1,1 +1,17 @@
-<h2> login </h2>
+<h2 class="m-3">Login to your dashboard</h2>
+<form action="/api/users/login" method="POST">
+    <div class="col-sm-6 m-3">
+        <label for="name" class="form-label">your name</label>
+        <input type="text" class="form-control" id="name">
+    </div>
+    <div class="col-sm-6 m-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username">
+    </div>
+    <div class="col-sm-6 m-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password">
+    </div>
+    <button type="submit" class="btn btn-secondary m-3">Login</button>
+    
+</form>

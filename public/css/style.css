@@ -1,0 +1,16 @@
+nav {
+    float: right;
+}
+nav > ul {
+    display: flex;
+}
+li {
+    list-style: none;
+    margin: 1px 5px 1px 5px;
+}
+#site-header {
+    float: left;
+}
+main {
+    clear: both;
+}
