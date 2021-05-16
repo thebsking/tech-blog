@@ -1,5 +1,5 @@
 <h2 class="m-3">Login to your dashboard</h2>
-<form action="/api/users/login" method="POST">
+<form id="login-form">
     <div class="col-sm-6 m-3">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="username">
@@ -8,6 +8,40 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password">
     </div>
-    <button type="submit" class="btn btn-secondary m-3">Login</button>
-    
+    <input type="submit" class="btn btn-secondary m-3" value="Login"></input>
+    <button type="button" class="btn btn-warning m-3" id="create-btn" data-toggle="modal" data-target="signup-modal">Create
+        Account</button>
 </form>
+
+<div id="signup-modal" class="modal-fade" tabindex="-1" aria-labelledby="signup-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h3 id="signup-title">Create an Account</h3>
+                </div>
+                </div>
+            <form id="signup-form">
+                <div class="modal-body">
+                <div class="col-sm-12">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="signup-name">
+                </div>
+                <div class="col-sm-12">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="signup-username">
+                </div>
+                <div class="col-sm-12">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="signup-password">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-warning m-3">Create Account</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./js/login.js"
