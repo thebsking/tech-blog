@@ -1,5 +1,4 @@
-const createButton = document.querySelector('#create-btn');
-
+//login form submission
 const loginHandler = async (event) => {
     event.preventDefault();
 
@@ -21,7 +20,7 @@ const loginHandler = async (event) => {
         }
     }
 };
-
+//signup form submission
 const signupHandler = async (event) => {
     event.preventDefault();
 
@@ -44,5 +43,12 @@ const signupHandler = async (event) => {
     }
 };
 
+//event listeners
 document.querySelector('#login-form').addEventListener('submit', loginHandler);
 document.querySelector('#signup-form').addEventListener('submit', signupHandler);
+
+//modal
+// $('#signup-modal').on('shown.bs.modal', function () {
+//     $('#signup-name').trigger('focus')
+//   })
+  

@@ -17,7 +17,7 @@
             <li><a href="/" class="btn btn-primary">Home</a></li>
             <li><a href="/dashboard" class="btn btn-primary"> Dashboard</a></li>
             {{#if logged_in}}
-            <li><a href="/api/users/logout" class="btn btn-primary">Logout</a></li>
+            <li><a id="logout-btn" class="btn btn-primary">Logout</a></li>
             {{else}}
             <li><a href="/login" class="btn btn-primary">Login</a></li>
             {{/if}}
@@ -26,6 +26,6 @@
     <main>
         {{{body}}}
     </main>
-
+<script src="./js/logout.js"></script>
 </body>
 </html>
