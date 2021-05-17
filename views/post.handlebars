@@ -2,3 +2,11 @@
 
 <h2>{{post.title}}</h2>
 <p>{{post.content}}</p>
+
+{{#each post.comments as |comment|}}
+<div class="card">
+    <p class="card-text">{{comment.comment}}</p>
+   
+</div>
+
+{{/each}}
