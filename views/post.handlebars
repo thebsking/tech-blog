@@ -2,12 +2,20 @@
 
 <h2>{{post.title}}</h2>
 <p>{{post.content}}</p>
-
+{{#if post.comments.length}}
 {{#each post.comments as |comment|}}
 <div class="card">
-    <p class="card-text">comment from: {{comment.user.username}}</p>
-    <p class="card-text">{{comment.comment}}</p>
-   
+    <p class="card-text user-partial">comment from: {{comment.user.username}}</p>
+    <p class="card-text content-partial">{{comment.comment}}</p>
 </div>
-
 {{/each}}
+{{else}}
+<h3>No Comments Yet...</h3>
+{{/if}}
+
+<div id="add-comment">
+    <form action="">
+        <label for="new-comment" class="form-label">Add new comment:</label>
+        <textarea class="form-control" id="new-comment" rows="3"></textarea>
+    </form>
+</div>
