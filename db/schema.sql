@@ -12,6 +12,7 @@ Posts
     comments *comment.ID
 Users
     ID
+    name
     username
     password
 Comments
