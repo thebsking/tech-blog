@@ -14,3 +14,23 @@ li {
 main {
     clear: both;
 }
+
+div{
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+.card {
+    width: 50%;
+    margin: 10px auto 10px auto;
+}
+.user-partial {
+    padding: 5px;
+    border: 1px solid black;
+    font-size: x-small;
+    margin: 0;
+}
+.content-partial {
+    padding: 10px;
+    border: solid 1px black;
+    margin: 0;
+}

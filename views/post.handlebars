@@ -1,10 +1,12 @@
 
+<div>
+    <h2 class="post-title">{{post.title}}</h2>
+    <p class="post-content">{{post.content}}</p>
+</div>
 
-<h2>{{post.title}}</h2>
-<p>{{post.content}}</p>
 {{#if post.comments.length}}
 {{#each post.comments as |comment|}}
-<div class="card">
+<div class="card comment">
     <p class="card-text user-partial">comment from: {{comment.user.username}}</p>
     <p class="card-text content-partial">{{comment.comment}}</p>
 </div>
@@ -17,5 +19,6 @@
     <form action="">
         <label for="new-comment" class="form-label">Add new comment:</label>
         <textarea class="form-control" id="new-comment" rows="3"></textarea>
+        <button type="submit" class="btn btn-secondary m-3">add</button>
     </form>
 </div>
