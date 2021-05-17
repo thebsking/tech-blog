@@ -21,6 +21,11 @@ const seedUsers = () => User.bulkCreate([
         username: 'cantrelate121',
         password: '123456789',
     },
-]);
+
+],
+{
+    individualHooks: true,
+    returning: true,
+});
 
 module.exports = seedUsers;
