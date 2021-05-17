@@ -5,6 +5,7 @@
 
 {{#each post.comments as |comment|}}
 <div class="card">
+    <p class="card-text">comment from: {{comment.user.username}}</p>
     <p class="card-text">{{comment.comment}}</p>
    
 </div>
