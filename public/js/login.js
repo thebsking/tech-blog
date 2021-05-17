@@ -48,7 +48,7 @@ document.querySelector('#login-form').addEventListener('submit', loginHandler);
 document.querySelector('#signup-form').addEventListener('submit', signupHandler);
 
 //modal
-// $('#signup-modal').on('shown.bs.modal', function () {
-//     $('#signup-name').trigger('focus')
-//   })
+$('#signup-modal').on('shown.bs.modal', function () {
+    $('#signup-name').trigger('focus')
+  })
   

@@ -9,37 +9,36 @@
         <input type="password" class="form-control" id="password">
     </div>
     <input type="submit" class="btn btn-secondary m-3" value="Login"></input>
-    <button type="button" class="btn btn-warning m-3" data-toggle="modal" data-target="#signup-modal">Create Account</button>
+    <button type="button" class="btn btn-warning m-3" data-toggle="modal" data-target="#signup-modal">Create
+        Account</button>
 </form>
 
 <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="signup-title" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                    <h3 class="modal-title" id="signup-title">Create an Account</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Clost">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            <form id="signup-form">
-                <div class="modal-body">
-                <div class="col-sm-12">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="signup-name">
-                </div>
-                <div class="col-sm-12">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="signup-username">
-                </div>
-                <div class="col-sm-12">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="signup-password">
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button class="btn btn-warning m-3">Create Account</button>
-                </div>
-            </form>
+                <h3 class="modal-title" id="signup-title">Create an Account</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="signup-form">
+                    <div class="col-sm-12">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="signup-name">
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="signup-username">
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signup-password">
+                    </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-warning m-3">Create Account</button>
+                </form>
             </div>
         </div>
     </div>
