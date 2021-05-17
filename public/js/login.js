@@ -24,19 +24,19 @@ const loginHandler = async (event) => {
 const signupHandler = async (event) => {
     event.preventDefault();
 
-    const nameEl = document.querySelector('#signup-name').value.trim();
-    const userEl = document.querySelector('#signup-username').value.trim();
-    const passEl = document.querySelector('#signup-password').value.trim();
-
-    if (nameEl && userEl && passEl) {
+    const name = document.querySelector('#signup-name').value.trim();
+    const username = document.querySelector('#signup-username').value.trim();
+    const password = document.querySelector('#signup-password').value.trim();
+    console.log( name, username, password);
+    if (name && username && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ nameEl, userEl, passEl }),
+            body: JSON.stringify({ name, username, password }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/homepage');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
