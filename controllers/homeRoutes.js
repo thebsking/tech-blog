@@ -5,7 +5,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        if(req.session.logged_in){
         const allPosts = await Post.findAll({
             include: [
                 {
@@ -19,13 +18,18 @@ router.get('/', async (req, res) => {
         });
 
         const posts = allPosts.map((post) => post.get({ plain: true }));
+        
+        if (req.session.logged_in) {
 
-        res.render('homepage', {
-            posts,
-            logged_in: req.session.logged_in
-        });}
+            res.render('homepage', {
+                posts,
+                logged_in: req.session.logged_in
+            });
+        }
         else {
-            res.render('login')
+            res.render('homepage', {
+                posts,
+            })
         }
     } catch (err) {
         res.status(500).json(err);
@@ -34,7 +38,7 @@ router.get('/', async (req, res) => {
 //WHEN I click on the dashboard option in the navigation
 //THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
 
-router.get('/dashboard', withAuth, async (req, res)=> {
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -86,7 +90,7 @@ router.get('/post/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if(req.session.logged_in) {
+    if (req.session.logged_in) {
         res.redirect('/dashboard');
         return;
     }
