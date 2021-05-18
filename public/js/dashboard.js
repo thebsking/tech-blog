@@ -10,7 +10,19 @@ const delePost = async (event) => {
         method: 'DELETE',
         headers: {'Content-Type': 'application/json'}
     });
-    document.location.reload
+    if(apiCall.ok){
+    document.location.reload();
+    } else {
+        alert(apiCall.statusText);
+    }
+}
+//edit function
+const editPost = (event) => {
+    event.preventDefault(); 
 }
 
-$('.delete').on('click', delePost)
+
+
+//event listeners
+$('.delete').on('click', delePost);
+$('.edit').on('click', editPost);
