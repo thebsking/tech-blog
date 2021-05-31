@@ -37,3 +37,9 @@ div{
     border: solid 1px black;
     margin: 0;
 }
+
+#post-container, #all-posts {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
