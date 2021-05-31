@@ -7,7 +7,7 @@
 <div id="post-{{post.id}}" class="card">
     <div class="card-body">
         <h4 class="card-title">{{post.title}}</h4><p>{{format_date post.date_created}}</p> 
-        <a href="/post/{{post.id}}" class="btn btn-primary">View Post</a>
+        <a id="post-url" href="/post/{{post.id}}" class="btn btn-primary">View Post</a>
         <button class="btn edit btn-secondary">Edit Post</button>
         <button class="btn delete btn-danger">Delete Post</button>
     </div>

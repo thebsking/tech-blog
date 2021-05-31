@@ -34,10 +34,12 @@ const delePost = async (event) => {
     }
 }
 //edit function
-// const editPost = (event) => {
+// const editPost = async (event) => {
 //     event.preventDefault();
-//     const title = $('.card-title');
-//     const content = $('.')
+//     const postUrl = $('#post-url').attr('href');
+//     const currentContent = await fetch(postUrl, {
+
+//     })
 // }
 
 
